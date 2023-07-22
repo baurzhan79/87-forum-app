@@ -1,0 +1,18 @@
+.NavigationItems {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100%;
+}
+
+.NavigationItems-li {
+    display: flex;
+    align-items: center;
+}
+
+.NavigationItems-li p {
+    margin: auto 0;
+}
