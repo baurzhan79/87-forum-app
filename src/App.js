@@ -1,17 +1,22 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import { useSelector } from "react-redux";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 import Layout from "./components/Layout/Layout";
+import Register from "./containers/User/Register";
+import Login from "./containers/User/Login";
 
 function App() {
-  const user = null;
+  const user = useSelector(state => state.users.user);
 
   return (
     <BrowserRouter>
       <Layout user={user}>
         <Routes>
           <Route path="/" element={<h3 style={{ textAlign: "center" }}>Main page will be here</h3>} />
-          <Route path="/register" element={<h3 style={{ textAlign: "center" }}>Register page will be here</h3>} />
-          <Route path="/login" element={<h3 style={{ textAlign: "center" }}>Login page will be here</h3>} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/add-post" element={<h3 style={{ textAlign: "center" }}>Add new post page will be here</h3>} />
           <Route path="/post/:postId" element={<h3 style={{ textAlign: "center" }}>Full post page will be here</h3>} />
           <Route path="*" element={<h3 style={{ textAlign: "center" }}>Page not found</h3>} />
