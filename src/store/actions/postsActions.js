@@ -41,3 +41,14 @@ export const postsGetItems = () => {
         }
     }
 };
+
+export const addNewPost = (post, userToken) => {
+    return async dispatch => {
+        dispatch(postsRequest());
+        try {
+            await axios.post("/posts", post, { headers: { Authorization: userToken } });
+        } catch (error) {
+            dispatch(postsError(error));
+        }
+    }
+};
