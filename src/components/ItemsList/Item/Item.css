@@ -1,0 +1,68 @@
+.Item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: 1px solid gray;
+  margin: 10px;
+  padding: 10px;
+  background-color: aliceblue;
+}
+
+.Item-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.Item-imgBox {
+  width: 100px;
+  height: 100px;
+  display: flex;
+}
+
+.Item-img {
+  display: block;
+  width: 100%;
+}
+
+.Item-description {
+  padding: 5px 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.Item-btnBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Item-span {
+  margin: 10px 10px 10px 0;
+}
+
+.Item-btn {
+  margin: 10px 0;
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  user-select: none;
+  background: none;
+
+  font-size: 16px;
+  color: #195ABB;
+  text-decoration: underline;
+}
+
+.Item-btnOpen::after {
+  content: " >>";
+}
+
+.Item-btnOpen {
+  margin-right: 10px;
+}
+
+.Item-btnOpen:hover {
+  color: darkblue;
+}

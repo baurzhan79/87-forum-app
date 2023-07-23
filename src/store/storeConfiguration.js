@@ -4,11 +4,13 @@ import thunk from "redux-thunk";
 import { configureStore } from "@reduxjs/toolkit";
 
 import usersReducer from "./reducers/usersReducer";
+import postsReducer from "./reducers/postsReducer";
 
 import { saveToLocalStorage, loadFromLocalStorage } from "./localStorage";
 
 const rootReducer = combineReducers({
-    users: usersReducer
+    users: usersReducer,
+    posts: postsReducer
 });
 
 const persistedState = loadFromLocalStorage();
