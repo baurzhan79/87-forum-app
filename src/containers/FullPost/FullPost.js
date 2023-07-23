@@ -33,16 +33,22 @@ const FullPost = () => {
     useEffect(() => {
         if (errorMsgPost !== null) {
             console.log("Error with request: ", errorMsgPost);
+            navigate("/");
         }
     }, [errorMsgPost, navigate]);
 
     useEffect(() => {
         if (errorMsgComments !== null) {
             console.log("Error with request: ", errorMsgComments);
+            navigate("/");
         }
     }, [errorMsgComments, navigate]);
 
     const user = useSelector(state => state.users.user);
+
+    useEffect(() => {
+        if (user === null) navigate("/");
+    }, [user, navigate]);
 
     const submitHandler = async comment => {
         await dispatch(addNewComment(comment, user.token));
