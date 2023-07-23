@@ -5,12 +5,14 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import usersReducer from "./reducers/usersReducer";
 import postsReducer from "./reducers/postsReducer";
+import commentsReducer from "./reducers/commentsReducer";
 
 import { saveToLocalStorage, loadFromLocalStorage } from "./localStorage";
 
 const rootReducer = combineReducers({
     users: usersReducer,
-    posts: postsReducer
+    posts: postsReducer,
+    comments: commentsReducer
 });
 
 const persistedState = loadFromLocalStorage();
